@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genius Chat - 電商專用的超能力客服系統</title>
+    <style>
+        :root { --primary: #0084ff; --dark: #2c3e50; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Microsoft JhengHei", sans-serif; margin: 0; line-height: 1.6; color: #333; }
+        
+        /* 導覽列 */
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 5%; background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .logo { font-size: 24px; font-weight: bold; color: var(--primary); }
+        .nav-links a { text-decoration: none; color: var(--dark); margin-left: 20px; font-weight: 500; }
+        .btn { background: var(--primary); color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: bold; transition: 0.2s; }
+        .btn:hover { background: #006ecd; }
+
+        /* 英雄區塊 (Header) */
+        header { text-align: center; padding: 100px 20px; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); }
+        h1 { font-size: 3em; margin-bottom: 20px; color: var(--dark); }
+        .subtitle { font-size: 1.2em; color: #666; max-width: 600px; margin: 0 auto 40px; }
+        
+        /* 特色區塊 */
+        .features { padding: 80px 5%; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+        .feature-card { padding: 30px; border-radius: 12px; background: white; box-shadow: 0 5px 20px rgba(0,0,0,0.05); text-align: center; transition: transform 0.2s; }
+        .feature-card:hover { transform: translateY(-5px); }
+        .icon { font-size: 40px; margin-bottom: 20px; display: block; }
+        
+        /* 價格區塊 */
+        .pricing { background: #f9f9f9; padding: 80px 5%; text-align: center; }
+        .price-card { background: white; max-width: 400px; margin: 0 auto; padding: 40px; border-radius: 12px; box-shadow: 0 5px 25px rgba(0,0,0,0.1); border-top: 5px solid var(--primary); }
+        .price { font-size: 3em; font-weight: bold; color: var(--dark); }
+        .price span { font-size: 0.4em; color: #999; }
+        
+        /* 頁尾 */
+        footer { background: var(--dark); color: white; text-align: center; padding: 40px; margin-top: 50px; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Genius Chat ⚡</div>
+        <div class="nav-links">
+            <a href="#features">功能介紹</a>
+            <a href="#pricing">方案價格</a>
+            <a href="#" onclick="alert('請點擊右下角客服按鈕聯繫我們！')">聯絡我們</a>
+        </div>
+    </nav>
+
+    <header>
+        <h1>讓您的客服擁有「上帝視角」</h1>
+        <p class="subtitle">專為 Cyberbiz / Shopify 打造的智慧客服外掛。<br>即時查看顧客購物車、未取貨風險偵測、瀏覽足跡追蹤。</p>
+        <a href="#pricing" class="btn">立即免費試用</a>
+    </header>
+
+    <section id="features" class="features">
+        <div class="feature-card">
+            <span class="icon">🛒</span>
+            <h3>購物車透視</h3>
+            <p>顧客還沒結帳？客服後台直接看到購物車內容與金額，主動出擊挽回訂單。</p>
+        </div>
+        <div class="feature-card">
+            <span class="icon">⚠️</span>
+            <h3>奧客風險偵測</h3>
+            <p>自動偵測顧客歷史未取貨紀錄，後台亮紅燈警示，避免出貨損失。</p>
+        </div>
+        <div class="feature-card">
+            <span class="icon">👣</span>
+            <h3>瀏覽足跡追蹤</h3>
+            <p>不用再問「你在看哪一件？」，後台即時顯示顧客正在瀏覽的商品圖片。</p>
+        </div>
+    </section>
+
+    <section id="pricing" class="pricing">
+        <h2>簡單透明的定價</h2>
+        <p>無隱藏費用，隨時可取消</p>
+        <div class="price-card">
+            <h3>標準版</h3>
+            <div class="price">NT$ 499 <span>/ 月</span></div>
+            <ul style="list-style: none; padding: 0; margin: 30px 0; text-align: left; line-height: 2.5;">
+                <li>✅ 無限對話紀錄</li>
+                <li>✅ PWA 手機版後台</li>
+                <li>✅ 購物車 & 足跡偵測</li>
+                <li>✅ 圖片傳送功能</li>
+                <li>✅ 內部備註系統</li>
+            </ul>
+            <a href="#" class="btn" style="display: block;">聯繫客服開通</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2024 Genius Chat. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // 模擬一個訪客資料
+        window.ChatWidgetConfig = {
+            shopId: "genius_0201",  // 請改成您的 Shop ID
+            token: "genius_0201_token_888", // 請改成您的 Token
+            
+            // 這裡不放 userId，讓系統自動產生訪客 ID
+            // userId: "", 
+            
+            userProfile: {
+                cartTotal: "0",
+                cartCount: "0",
+                loginType: "官網訪客"
+            },
+            
+            autoReplyEnabled: true,
+            startHour: 0,
+            endHour: 24,
+            offlineMsg: "您好！我現在正在展示這個網頁，有問題可以直接問我喔！"
+        };
+    </script>
+    
+    <script src="https://customer-support-xtpx.onrender.com/widget.js" async></script>
+
+</body>
+</html>
